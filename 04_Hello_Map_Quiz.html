@@ -14,16 +14,129 @@ API Course, Lesson 1 -->
      var map;
 
      function initMap() {
+
+      var styles = [
+        {
+          featureType: 'road.highway',
+          stylers:
+            [
+              { "color": '#0affa0' },
+              { saturation: -60 }
+            ],
+          elementType: 'geometry.fill'
+        },
+        {
+          featureType: 'road.local',
+          stylers:
+            [
+              { color: '#440055' },
+              { lightness: -40 },
+              { saturation: -40 }
+            ],
+          elementType: 'geometry.fill'
+        },
+        {
+          featureType: 'poi.school',
+          stylers:
+            [
+              { "color": '#753daf' }
+            ],
+          elementType: 'labels.text.fill'
+        },
+        {
+          featureType: 'poi.park',
+          stylers:
+            [
+              { "color": '#66cc22' }
+            ],
+          elementType: 'geometry.fill'
+        },
+        {
+          featureType: 'poi.place_of_worship',
+          stylers:
+            [
+              { "color": '#ffaa44' }
+            ],
+          elementType: 'labels.text.fill'
+        },
+        {
+          featureType: 'landscape.natural.terrain',
+          stylers:
+            [
+              { "color": '#ddd222' }
+            ],
+          elementType: 'geometry.stroke'
+        },
+        {
+          featureType: 'administrative.land_parcel',
+          stylers:
+            [
+              { "color": '#ff9901' }
+            ],
+          elementType: 'labels.text.fill'
+        },
+        {
+          featureType: 'landscape.natural',
+          stylers:
+            [
+              { "color": '#22dfea' }
+            ],
+          elementType: 'geometry.fill'
+        },
+        {
+          featureType: 'road.arterial',
+          stylers:
+            [
+              { "color": '#00ffc1' }
+            ],
+          elementType: 'geometry.fill'
+        },
+        {
+          featureType: 'administrative.neighborhood',
+          stylers:
+            [
+              { "color": '#0ffcda' }
+            ],
+          elementType: 'labels.text'
+        },
+        {
+          featureType: 'landscape.man_made',
+          stylers: 
+          [
+            { "visibility": "off" }
+          ],
+          elementType: 'geometry.fill'
+        },
+        {
+          featureType: 'transit.station.bus',
+          stylers:
+            [
+              { "color": '#ffffff' },
+              { weight: 7 }
+            ],
+          elementType: 'labels.text'
+        }, 
+        {
+          featureType: 'water',
+          stylers:
+            [
+              { invert_lightness: true }
+            ],
+        },
+      ];
+
        // Constructor creates a new map - only center and zoom are required
        map = new google.maps.Map(document.getElementById('map'), {
          center: {lat: 41.2331, lng: -80.4934},
-         zoom: 15
+         zoom: 15,
+         styles: styles,
+         mapTypeControl: false
        });
        var penn_state_shenango = {lat: 41.23580927876249, lng: -80.50847232341766};
        var marker = new google.maps.Marker({
          position: penn_state_shenango,
          map: map,
-         title: 'Penn State Shenango'
+         title: 'Penn State Shenango',         
        });
      }
    </script>
